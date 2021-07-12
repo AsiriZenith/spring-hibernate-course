@@ -18,5 +18,6 @@ public class HelloSpringApp {
 		
 		// close the context
 		context.close();
+		// test
 	}
 }
