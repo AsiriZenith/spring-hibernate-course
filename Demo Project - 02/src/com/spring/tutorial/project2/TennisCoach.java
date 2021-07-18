@@ -1,8 +1,12 @@
 package com.spring.tutorial.project2;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Component
 public class TennisCoach implements Coach {
@@ -44,4 +48,15 @@ public class TennisCoach implements Coach {
 		return fortuneService.getFortune();
 	}
 
+	// define my initial method
+	@PostConstruct
+	public void doMyStartUpStuff() {
+		System.out.println(">> Tennis Coach: Inside of doMyStartUpStuff()");
+	}
+	
+	// define my destroy method
+	@PreDestroy
+	public void doMyCleanUpStuff() {
+		System.out.println(">> Tennis Coach: Inside of doMyCleanUpStuff()");
+	}
 }
