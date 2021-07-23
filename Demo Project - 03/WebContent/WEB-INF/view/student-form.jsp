@@ -13,6 +13,21 @@
 		<br>
 		Last Name: <form:input path="lastName" />
 		<br>
+		Country: 
+		<form:select path="country">
+			<form:options items="${ student.contryOptions }" />
+		</form:select>
+		<br>
+		Favorite Language:
+		Java <form:radiobutton path="favoriteLanguage" value="Java" />
+		C# <form:radiobutton path="favoriteLanguage" value="C#" />
+		C <form:radiobutton path="favoriteLanguage" value="C" />
+		R <form:radiobutton path="favoriteLanguage" value="R" />
+		<br>
+		Linux <form:checkbox path="operatingSystems" value="Linux" />
+		Mac OS <form:checkbox path="operatingSystems" value="Mac OS" />
+		MS Windows <form:checkbox path="operatingSystems" value="MS Windows" />
+		<br><br>
 		<input type="submit" value="Submit" />
 	</form:form>
 </body>
