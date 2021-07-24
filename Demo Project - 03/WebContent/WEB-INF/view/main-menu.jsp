@@ -5,5 +5,7 @@
 	<a href="/spring-mvc-demo/hello/showForm">Hello World Form</a>
 	<br>
 	<a href="/spring-mvc-demo/student/showForms">Student Form</a>
+	<br>
+	<a href="/spring-mvc-demo/customer/showForm">Customer Form</a>
 </body>
 </html>
