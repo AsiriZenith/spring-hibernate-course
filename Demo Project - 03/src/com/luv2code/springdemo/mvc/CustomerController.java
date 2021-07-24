@@ -1,8 +1,11 @@
 package com.luv2code.springdemo.mvc;
 
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -30,5 +33,13 @@ public class CustomerController {
 		} else {
 			return "customer-confirmation";
 		}
+	}
+	
+	// add an initbinder ... to convert trim input string
+	// remove leading and trailing whitespace
+	@InitBinder
+	public void initBinder(WebDataBinder webDataBinder) {
+		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
+		webDataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
 	}
 }
