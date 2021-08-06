@@ -66,5 +66,4 @@ public class Student {
 	public void setOperatingSystems(String[] operatingSystems) {
 		this.operatingSystems = operatingSystems;
 	}
-	
 }
